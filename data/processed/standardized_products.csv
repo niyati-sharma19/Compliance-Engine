@@ -1,0 +1,66 @@
+item_id,category,product_name,raw_composition,clean_composition,authority,risk_reason,is_banned
+REG_001,FOOD,Premium Whole Wheat Atta,Whole Wheat Grain,whole wheat grain,NONE,No specific infraction noted.,0
+REG_002,FOOD,Organic Brown Basmati,Brown Basmati Rice,brown basmati rice,NONE,No specific infraction noted.,0
+REG_003,FOOD,Cold Pressed Mustard Oil,Pure Mustard Seed Oil,pure mustard seed oil,NONE,No specific infraction noted.,0
+REG_004,FOOD,Roasted Peanuts Salted,"Peanuts, Iodized Salt",peanuts iodized salt,NONE,No specific infraction noted.,0
+REG_005,FOOD,Pure Desi Ghee,Milk Fat,milk fat,NONE,No specific infraction noted.,0
+REG_006,FOOD,Multigrain Breakfast Flakes,"Whole Oats, Wheat Flakes, Corn Grits, Malt Extract",whole oats wheat flakes corn grits malt extract,NONE,No specific infraction noted.,0
+REG_007,FOOD,Organic Turmeric Powder,Ground Turmeric Rhizome,ground turmeric rhizome,NONE,No specific infraction noted.,0
+REG_008,FOOD,Natural Cane Jaggery,Sugarcane Juice Extract,sugarcane juice extract,NONE,No specific infraction noted.,0
+REG_009,FOOD,Green Tea Mint,"Green Tea Leaves, Dried Peppermint",green tea leaves dried peppermint,NONE,No specific infraction noted.,0
+REG_010,FOOD,Almond Butter Creamy,"Roasted California Almonds, Sea Salt",roasted california almonds sea salt,NONE,No specific infraction noted.,0
+REG_011,FOOD,Sorghum Millet Crisps,"Jowar Flour, Sunflower Oil, Cumin, Salt",jowar flour sunflower oil cumin salt,NONE,No specific infraction noted.,0
+REG_012,FOOD,Pure Raw Honey,Natural Forest Honey,natural forest honey,NONE,No specific infraction noted.,0
+REG_013,FOOD,Kashmiri Chilli Powder,Dry Red Chillies,dry red chillies,NONE,No specific infraction noted.,0
+REG_014,FOOD,Unpolished Toor Dal,Pigeon Pea Splits,pigeon pea splits,NONE,No specific infraction noted.,0
+REG_015,FOOD,Super Soft Bakery Loaf,Potassium Bromate,potassium bromate,FSSAI,Carcinogenic flour improver banned under FSSAI 2016,1
+REG_016,FOOD,Artificially Ripened Mangoes,Calcium Carbide,calcium carbide,FSSAI,Prohibited ripening chemical releasing toxic acetylene,1
+REG_017,FOOD,Festive Besan Ladoo Mix,Metanil Yellow,metanil yellow,FSSAI,Banned non-permitted synthetic industrial dye,1
+REG_018,FOOD,Bright Pink Fair Cotton Candy,Rhodamine B,rhodamine b,FSSAI,Banned toxic textile dye in foodstuffs,1
+REG_019,FOOD,Export Red Chilli Powder,Sudan I,sudan i,FSSAI,Genotoxic carcinogenic industrial dye,1
+REG_020,FOOD,Adulterated Mustard Oil,Argemone Oil,argemone oil,FSSAI,Toxic sanguinarine adulterant causing epidemic dropsy,1
+REG_021,FOOD,Polished Turmeric Root,Lead Chromate,lead chromate,FSSAI,Neurotoxic heavy-metal pigment banned under FSS Act,1
+REG_022,FOOD,Industrial Packaged Bread,Potassium Iodate,potassium iodate,FSSAI,Prohibited flour treatment agent,1
+REG_023,COSMETICS,Deep Clean Face Wash,"Aqua, Cocamidopropyl Betaine, Glycerin, Sodium Chloride",aqua cocamidopropyl betaine glycerin sodium chloride,NONE,No specific infraction noted.,0
+REG_024,COSMETICS,Moisture Shield Body Lotion,"Aqua, Cetyl Alcohol, Shea Butter, Dimethicone, Phenoxyethanol",aqua cetyl alcohol shea butter dimethicone phenoxyethanol,NONE,No specific infraction noted.,0
+REG_025,COSMETICS,Broad Spectrum Gel Sunscreen,"Aqua, Zinc Oxide, Caprylic Triglyceride, Silica, Glycerin",aqua zinc oxide caprylic triglyceride silica glycerin,NONE,No specific infraction noted.,0
+REG_026,COSMETICS,Hyaluronic Hydrating Serum,"Aqua, Sodium Hyaluronate, Propanediol, Panthenol",aqua sodium hyaluronate propanediol panthenol,NONE,No specific infraction noted.,0
+REG_027,COSMETICS,Clarifying Tea Tree Shampoo,"Aqua, Sodium Laureth Sulfate, Melaleuca Alternifolia Leaf Oil, Citric Acid",aqua sodium laureth sulfate melaleuca alternifolia leaf oil citric acid,NONE,No specific infraction noted.,0
+REG_028,COSMETICS,Nourishing Hair Conditioner,"Aqua, Cetearyl Alcohol, Argania Spinosa Kernel Oil, Behentrimonium Chloride",aqua cetearyl alcohol argania spinosa kernel oil behentrimonium chloride,NONE,No specific infraction noted.,0
+REG_029,COSMETICS,Organic Lip Care Butter,"Beeswax, Cocos Nucifera Oil, Castor Seed Oil, Tocopherol",beeswax cocos nucifera oil castor seed oil tocopherol,NONE,No specific infraction noted.,0
+REG_030,COSMETICS,Exfoliating Walnut Face Scrub,"Aqua, Juglans Regia Shell Powder, Stearic Acid, Glycerin",aqua juglans regia shell powder stearic acid glycerin,NONE,No specific infraction noted.,0
+REG_031,COSMETICS,Soothing Rosewater Toner,"Rosa Damascena Flower Water, Glycerin, Sodium Benzoate",rosa damascena flower water glycerin sodium benzoate,NONE,No specific infraction noted.,0
+REG_032,COSMETICS,Instant Fairness Bleaching Formula,Mercury,mercury,CDSCO,Banned toxic heavy metal under BIS IS 4707 Part 1,1
+REG_033,COSMETICS,Antimicrobial Hospital Soap,Bithionol,bithionol,CDSCO,Banned photocontact sensitizer in topical cosmetics,1
+REG_034,COSMETICS,Chemical Skin Peel Solution,Chloroform,chloroform,BIS,Prohibited solvent under Drugs and Cosmetics Rules,1
+REG_035,COSMETICS,Antiseptic Medicated Powder,Hexachlorophene,hexachlorophene,CDSCO,Neurotoxic halogenated antibacterial prohibited in cosmetics,1
+REG_036,COSMETICS,Kohl Eyeliner Traditional,Lead,lead,BIS,Prohibited heavy-metal contaminant in ocular cosmetics,1
+REG_037,MEDICINE,Fever Relief Tablets,Paracetamol,paracetamol,NONE,No specific infraction noted.,0
+REG_038,MEDICINE,Antiallergic Suspension,Cetirizine Hydrochloride,cetirizine hydrochloride,NONE,No specific infraction noted.,0
+REG_039,MEDICINE,Electrolyte Rehydration Formula,Oral Rehydration Salts,oral rehydration salts,NONE,No specific infraction noted.,0
+REG_040,MEDICINE,NSAID Pain Reliever,Ibuprofen,ibuprofen,NONE,No specific infraction noted.,0
+REG_041,MEDICINE,Acid Reflux Capsule,Omeprazole Delayed Release,omeprazole delayed release,NONE,No specific infraction noted.,0
+REG_042,MEDICINE,Topical Antiseptic Liquid,Povidone Iodine Solution,povidone iodine solution,NONE,No specific infraction noted.,0
+REG_043,MEDICINE,Cough Relief Expectorant,Guaifenesin,guaifenesin,NONE,No specific infraction noted.,0
+REG_044,MEDICINE,Antihypertensive Formulation,Amlodipine Besylate,amlodipine besylate,NONE,No specific infraction noted.,0
+REG_045,MEDICINE,Broad Spectrum Penicillin,Amoxicillin Trihydrate,amoxicillin trihydrate,NONE,No specific infraction noted.,0
+REG_046,MEDICINE,Compound Analgesic Injection,Amidopyrine,amidopyrine,CDSCO,Severe agranulocytosis and fatal bone marrow toxicity,1
+REG_047,MEDICINE,Headache Relief Powder,Phenacetin,phenacetin,CDSCO,Nephrotoxicity and urinary tract carcinoma risk,1
+REG_048,MEDICINE,Gastrointestinal Prokinetic Syrup,Cisapride,cisapride,CDSCO,Fatal ventricular arrhythmias and QT prolongation,1
+REG_049,MEDICINE,Pediatric Fever Suspension 50mg,Nimesulide,nimesulide,CDSCO,Banned in children below 12 years due to acute liver failure,1
+REG_050,MEDICINE,Respiratory FDC Combination,Cefuroxime + Serratiopeptidase,cefuroxime serratiopeptidase,CDSCO,Prohibited irrational fixed-dose combination,1
+REG_051,MEDICINE,Anti-obesity Appetite Suppressant,Sibutramine,sibutramine,CDSCO,Excess cardiovascular events and stroke risk,1
+REG_052,MEDICINE,Analgesic NSAID Tablet,Rofecoxib,rofecoxib,CDSCO,Severe thrombotic cardiovascular adverse events,1
+REG_053,AGRICULTURE,Cold Pressed Neem Insecticide,"Azadirachtin, Neem Seed Oil",azadirachtin neem seed oil,NONE,No specific infraction noted.,0
+REG_054,AGRICULTURE,Legume Bio-Fertilizer,"Rhizobium Culture, Carrier Peat",rhizobium culture carrier peat,NONE,No specific infraction noted.,0
+REG_055,AGRICULTURE,Muriate of Potash 60%,Potassium Chloride,potassium chloride,NONE,No specific infraction noted.,0
+REG_056,AGRICULTURE,Chelated Micronutrient Spray,"Zinc EDTA, Iron EDTA, Surfactant",zinc edta iron edta surfactant,NONE,No specific infraction noted.,0
+REG_057,AGRICULTURE,Enriched Vermicompost,"Organic Humus, Decomposed Farmyard Residue",organic humus decomposed farmyard residue,NONE,No specific infraction noted.,0
+REG_058,AGRICULTURE,Phosphate Solubilizing Bio-Inoculant,Bacillus megaterium Culture,bacillus megaterium culture,NONE,No specific infraction noted.,0
+REG_059,AGRICULTURE,Sulfur Fertilizer 80% WDG,Dispersible Elemental Sulfur,dispersible elemental sulfur,NONE,No specific infraction noted.,0
+REG_060,AGRICULTURE,Trichoderma Viride Bio-Fungicide,"Trichoderma Viride Spores, Talc Carrier",trichoderma viride spores talc carrier,NONE,No specific infraction noted.,0
+REG_061,AGRICULTURE,Crop Armor 35 EC,Endosulfan,endosulfan,CIBRC,Statutory Supreme Court ban; persistent organic pollutant,1
+REG_062,AGRICULTURE,Vegetable Protection Dust,Monocrotophos,monocrotophos,CIBRC,Prohibited for use on all vegetable crops (Class Ib acute toxin),1
+REG_063,AGRICULTURE,Stored Grain Fumigation Pellets,Aluminium Phosphide,aluminium phosphide,CIBRC,Restricted exclusively to authorized government operators,1
+REG_064,AGRICULTURE,Broad Spectrum Orchard Insecticide,Diazinon,diazinon,CIBRC,Phased-out organophosphate insecticide,1
+REG_065,AGRICULTURE,Total Weed Controller,Paraquat Dichloride,paraquat dichloride,CIBRC,Restricted high-toxicity herbicide; strict label claim limits,1

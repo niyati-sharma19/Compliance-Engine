@@ -1,0 +1,27 @@
+{
+  "amidopyrine": {
+    "regulator": "CDSCO / Ministry of Health",
+    "clause": "Gazette Prohibited Drugs Notification",
+    "hazard": "Severe agranulocytosis and fatal bone marrow toxicity"
+  },
+  "phenacetin": {
+    "regulator": "CDSCO",
+    "clause": "Drugs and Cosmetics Act Section 26A",
+    "hazard": "Nephropathy, chronic kidney disease, and urothelial carcinoma"
+  },
+  "cisapride": {
+    "regulator": "CDSCO",
+    "clause": "Section 26A Banned Drug Formulation",
+    "hazard": "Fatal ventricular arrhythmias and QT prolongation"
+  },
+  "nimesulide": {
+    "regulator": "CDSCO",
+    "clause": "G.S.R. 82(E) Pediatric Restriction",
+    "hazard": "Restricted in children below 12 years due to acute hepatotoxicity"
+  },
+  "cefuroxime + serratiopeptidase": {
+    "regulator": "CDSCO",
+    "clause": "Prohibited Fixed-Dose Combinations (FDC) Order",
+    "hazard": "Unapproved irrational fixed-dose combination"
+  }
+}

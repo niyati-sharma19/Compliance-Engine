@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Metrology Compliance Engine — SIH PS-26034</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+
+  <!-- ================= TOP NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-2 shadow-sm">
+    <div class="container-fluid px-3 px-md-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="fs-4">🛡️</span>
+        <span class="fw-bold fs-5">Legal Metrology Compliance Engine</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end gap-3 mt-2 mt-lg-0" id="navContent">
+        <!-- View Tabs -->
+        <ul class="navbar-nav me-auto ms-lg-3 gap-1">
+          <li class="nav-item"><a class="nav-link active fw-bold text-white px-3 py-1 rounded" href="#" id="navTabScanner"><i class="bi bi-camera"></i> Scanner</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary px-3 py-1 rounded" href="#" id="navTabHistory"><i class="bi bi-clock-history"></i> Audit History</a></li>
+        </ul>
+
+        <span class="badge bg-primary px-3 py-2 text-uppercase fw-bold" style="font-size:0.75rem;">SIH PS-26034</span>
+
+        <!-- Preset Test Dropdown -->
+        <div class="d-flex align-items-center gap-2 bg-secondary bg-opacity-25 rounded px-2 py-1">
+          <span class="text-warning small fw-semibold">⚡ Presets:</span>
+          <select id="sampleSelector" class="form-select form-select-sm bg-dark text-white border-secondary" style="width:auto;"></select>
+        </div>
+
+        <!-- Role Switcher -->
+        <div class="dropdown">
+          <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="roleDropdownBtn" data-bs-toggle="dropdown">
+            <i class="bi bi-person-badge"></i> <span id="navRoleText">Role: Enforcement officer</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow">
+            <li><h6 class="dropdown-header text-uppercase" style="font-size:0.68rem;">Switch Active Role</h6></li>
+            <li><button class="dropdown-item" type="button" onclick="switchUserRole('Manufacturer')">🏭 Manufacturer</button></li>
+            <li><button class="dropdown-item" type="button" onclick="switchUserRole('Retailer')">🏪 Retailer</button></li>
+            <li><button class="dropdown-item active" type="button" onclick="switchUserRole('Enforcement officer')">👮 Enforcement officer (Inspector)</button></li>
+            <li><button class="dropdown-item" type="button" onclick="switchUserRole('Consumer')">🛒 Consumer</button></li>
+          </ul>
+        </div>
+
+        <!-- GitHub Link & User Profile & Logout -->
+        <div class="d-flex align-items-center gap-2 text-white ps-2 border-start border-secondary">
+          <a href="https://github.com/anuskayadav03/project" target="_blank" class="btn btn-sm btn-outline-light py-1 px-2" title="View Source on GitHub">
+            <i class="bi bi-github"></i> <span class="d-none d-sm-inline">GitHub</span>
+          </a>
+          <span class="small fw-semibold d-none d-md-inline" id="navUserName">User</span>
+          <button type="button" class="btn btn-sm btn-outline-danger py-1 px-2" id="btnLogout"><i class="bi bi-box-arrow-right"></i> Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= VIEW 1: SCANNER WORKSPACE ================= -->
+  <div id="scannerView" class="container-fluid px-3 px-md-4 py-4">
+
+    <!-- Header Alert -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center p-3 mb-4 bg-white border rounded shadow-sm gap-2">
+      <div>
+        <h5 class="fw-bold mb-1 d-flex align-items-center gap-2" id="productNameTitle">
+          <span>Awaiting Packaging Image</span>
+          <span class="badge bg-secondary text-uppercase" id="overallStatusBadge" style="font-size:0.75rem;">No Image</span>
+        </h5>
+        <small class="text-muted" id="productCategorySubtitle">Upload a food packaging photo or scan with camera to begin compliance audit.</small>
+      </div>
+      <button class="btn btn-sm btn-outline-secondary" onclick="window.print()"><i class="bi bi-printer"></i> Print Report</button>
+    </div>
+
+    <div class="row g-4">
+      <!-- LEFT COLUMN: Upload, Camera, OCR -->
+      <div class="col-lg-5">
+        <!-- Upload Card -->
+        <div class="card shadow-sm border-0 mb-3">
+          <div class="card-header bg-white py-3 fw-bold"><i class="bi bi-camera-fill text-primary"></i> Step 1: Upload or Scan Food Label</div>
+          <div class="card-body">
+            <div id="dropZone" class="border border-2 border-dashed rounded p-4 text-center bg-light mb-3" style="cursor: pointer;">
+              <i class="bi bi-cloud-arrow-up-fill fs-1 text-primary"></i>
+              <h6 class="fw-bold mt-2 mb-1">Drag & Drop Food Packaging Photo</h6>
+              <p class="text-muted small mb-2">or browse from your device</p>
+              <input type="file" id="fileInput" class="d-none" accept="image/*">
+              <button type="button" class="btn btn-sm btn-primary px-3" onclick="document.getElementById('fileInput').click()">Choose Photo</button>
+            </div>
+            <button type="button" class="btn btn-dark w-100 fw-bold py-2" data-bs-toggle="modal" data-bs-target="#cameraModal" id="btnOpenCam">
+              <i class="bi bi-camera-video-fill text-info"></i> Scan with Device Camera (Live)
+            </button>
+          </div>
+        </div>
+
+        <!-- Visual Preview -->
+        <div class="card shadow-sm border-0 mb-3">
+          <div class="card-header bg-white py-2 d-flex justify-content-between align-items-center">
+            <small class="fw-bold text-secondary"><i class="bi bi-eye"></i> Packaging Visual Preview</small>
+            <span class="badge bg-secondary small" id="previewStatusBadge">No Image</span>
+          </div>
+          <div class="card-body p-3 text-center bg-dark rounded-bottom d-flex align-items-center justify-content-center" style="min-height:240px;">
+            <div id="noImagePrompt" class="text-secondary py-4">
+              <i class="bi bi-image fs-1 d-block mb-2 text-muted"></i>
+              <small>No food packaging photo loaded yet.</small>
+            </div>
+            <img id="labelPreviewImg" src="" alt="Packaging Label" class="img-fluid rounded d-none" style="max-height:340px;object-fit:contain;">
+          </div>
+        </div>
+
+        <!-- 📷 FOR OCR & IMAGE PROCESSING TEAMMATE -->
+        <div class="card border-primary border-opacity-50 shadow-sm mb-3">
+          <div class="card-header bg-primary bg-opacity-10 py-2 d-flex justify-content-between">
+            <strong class="text-primary small">📷 OCR Text Extraction Inspector</strong>
+            <span class="badge bg-primary">For OCR Teammate</span>
+          </div>
+          <div class="card-body">
+            <small class="text-muted d-block mb-2"><strong>OCR Teammate:</strong> Your Python/Tesseract OCR text appears here. You can also edit it live to test rule triggers:</small>
+            <textarea id="ocrRawText" class="form-control font-monospace small" rows="3" placeholder="OCR extracted text will appear here..."></textarea>
+            <button class="btn btn-sm btn-outline-primary mt-2 w-100 fw-bold" id="btnRecheckOcr"><i class="bi bi-arrow-repeat"></i> Re-Analyze With Current Text</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Report, 2011 Rules, Banned Chemicals -->
+      <div class="col-lg-7">
+
+        <!-- ⭐ 1. LEGAL AUDIT REPORT CARD -->
+        <div class="card shadow-sm border-0 mb-3" id="legalAuditReportCard">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="fw-bold mb-0 text-dark">Legal audit report</h5>
+              <span class="badge audit-status-badge text-capitalize" id="auditStatusBadge">Partially compliant</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress mb-3" style="height:10px;background:#f1f5f9;border-radius:999px;">
+              <div id="auditProgressBar" class="progress-bar" style="width:85%;background:#f59e0b;border-radius:999px;"></div>
+            </div>
+
+            <!-- Dynamic Role Actions -->
+            <div id="roleActionsContainer">
+              <!-- A) Manufacturer / Retailer View -->
+              <div id="viewActionsManufacturer" class="d-none">
+                <div class="row g-2">
+                  <div class="col-6"><button type="button" class="btn btn-outline-secondary w-100 py-2 fw-semibold" id="btnSaveHistoryMfg"><i class="bi bi-floppy"></i> Save to history</button></div>
+                  <div class="col-6"><button type="button" class="btn btn-outline-secondary w-100 py-2 fw-semibold" id="btnFixReupload"><i class="bi bi-arrow-repeat"></i> Fix & re-upload</button></div>
+                </div>
+                <small class="text-muted d-block mt-2">Checking their own product before market release — needs a save/track and a quick way to correct and rescan.</small>
+              </div>
+
+              <!-- B) Enforcement Officer View -->
+              <div id="viewActionsOfficer">
+                <div class="row g-2">
+                  <div class="col-6"><button type="button" class="btn btn-outline-danger w-100 py-2 fw-semibold" id="btnFileViolation" data-bs-toggle="modal" data-bs-target="#violationModal"><i class="bi bi-flag"></i> File violation</button></div>
+                  <div class="col-6"><button type="button" class="btn btn-outline-secondary w-100 py-2 fw-semibold" id="btnPrintReportOfficer" onclick="window.print()"><i class="bi bi-printer"></i> Print report</button></div>
+                </div>
+                <small class="text-muted d-block mt-2">Auditing someone else's product — needs the ability to formally flag a violation and print/attach the report as evidence.</small>
+              </div>
+
+              <!-- C) Consumer View -->
+              <div id="viewActionsConsumer" class="d-none">
+                <button type="button" class="btn btn-outline-secondary w-100 py-2 fw-semibold" id="btnReportAuthority" data-bs-toggle="modal" data-bs-target="#consumerReportModal"><i class="bi bi-exclamation-triangle"></i> Report to authority</button>
+                <small class="text-muted d-block mt-2">Just checking a product they bought — a single simple action, no save/print/file options they don't need.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. 2011 RULES COMPLIANCE (Only Violations by default) -->
+        <div class="card shadow-sm border-0 mb-3">
+          <div class="card-header bg-white py-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+            <div>
+              <h6 class="fw-bold mb-0 text-dark"><i class="bi bi-journal-check text-primary"></i> Legal Metrology 2011 Rules Compliance</h6>
+              <small class="text-muted">Checks mandatory declarations under 2011 Rules</small>
+            </div>
+            <!-- Filter Tabs -->
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item"><button class="nav-link active btn-sm fw-bold px-3 py-1" id="tabViolations" type="button">Violations Only (<span id="countBadgeViolations">0</span>)</button></li>
+              <li class="nav-item"><button class="nav-link btn-sm text-secondary px-3 py-1" id="tabAllRules" type="button">All (<span id="countBadgeAll">14</span>)</button></li>
+              <li class="nav-item"><button class="nav-link btn-sm text-secondary px-3 py-1" id="tabPassedRules" type="button">Passed (<span id="countBadgePassed">0</span>)</button></li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div id="rulesContainer">
+              <div class="text-center py-4 text-muted"><p class="small mb-0">No packaging scanned yet. Upload an image to check 2011 rule violations.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. BANNED INGREDIENTS CHECK -->
+        <div class="card shadow-sm border-0 mb-3">
+          <div class="card-header bg-white py-2">
+            <h6 class="fw-bold mb-0 text-dark"><i class="bi bi-shield-slash-fill text-danger"></i> Banned & Hazardous Ingredients Check</h6>
+            <small class="text-muted">Detects prohibited chemicals & industrial adulterants</small>
+          </div>
+          <div class="card-body"><div id="bannedIngredientsSection"><small class="text-muted">Scan a food packaging label to verify ingredients against banned chemicals.</small></div></div>
+        </div>
+
+        <!-- 🤖 FOR ML MODEL TEAMMATE (INGREDIENTS & CHEMICAL HAZARDS AI) -->
+        <div class="card border-warning border-opacity-50 shadow-sm mb-3">
+          <div class="card-header bg-warning bg-opacity-10 py-2 d-flex justify-content-between align-items-center">
+            <strong class="text-dark small"><i class="bi bi-robot text-warning me-1"></i> Ingredients AI / ML Model Bridge</strong>
+            <span class="badge bg-warning text-dark">For ML Teammate</span>
+          </div>
+          <div class="card-body small text-muted">
+            <p class="mb-1"><strong>ML Teammate:</strong> Connect your Python NLP / Classification model in <code>js/app.js</code> inside <code>backendCheckBannedIngredientsAPI()</code>.</p>
+            <div class="bg-dark text-light p-2 rounded font-monospace" style="font-size:0.75rem;">
+              // Input: { ingredients: "..." }<br>
+              // POST /api/ml/check-ingredients -&gt; Output: { detectedBanned: [...], detectedRestricted: [...] }
+            </div>
+          </div>
+        </div>
+
+        <!-- ⚙️ FOR THE 2 BACKEND TEAMMATES -->
+        <div class="card border-secondary border-opacity-50 shadow-sm mb-3">
+          <div class="card-header bg-secondary bg-opacity-10 py-2 d-flex justify-content-between">
+            <strong class="text-dark small">⚙️ Backend API Bridge</strong>
+            <span class="badge bg-secondary">For 2 Backend Teammates</span>
+          </div>
+          <div class="card-body small text-muted">
+            Connect your FastAPI / Flask / Node.js backend in <code>js/app.js</code>:
+            <code class="d-block bg-dark text-light p-2 rounded mt-1">
+              POST /api/check-compliance-2011 &nbsp;&bull;&nbsp; POST /api/check-banned-ingredients
+            </code>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= VIEW 2: AUDIT HISTORY LOG ================= -->
+  <div id="auditHistoryView" class="container-fluid px-3 px-md-4 py-4 d-none">
+    <div class="card shadow-sm border-0 mb-4">
+      <div class="card-body p-4">
+        
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+          <div>
+            <h3 class="fw-bold text-dark mb-1">Packaged Commodity Audit Log</h3>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">Record of verified commodity labels under Legal Metrology Rules, 2011.</p>
+          </div>
+
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-sm btn-dark active fw-semibold px-3" id="filterAllLogs">All Logs</button>
+            <button type="button" class="btn btn-sm btn-outline-success fw-semibold px-3" id="filterCompliantLogs">Compliant</button>
+            <button type="button" class="btn btn-sm btn-outline-danger fw-semibold px-3" id="filterViolationsLogs">Violations</button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table align-middle table-hover" id="auditLogTable">
+            <thead class="table-light text-uppercase text-secondary fw-bold" style="font-size: 0.72rem; letter-spacing: 0.04em;">
+              <tr>
+                <th scope="col" style="width: 14%;">AUDIT ID</th>
+                <th scope="col" style="width: 18%;">TIMESTAMP</th>
+                <th scope="col" style="width: 25%;">COMMODITY / BRAND</th>
+                <th scope="col" style="width: 12%;">NET QUANTITY</th>
+                <th scope="col" style="width: 15%;">COMPLIANCE SCORE</th>
+                <th scope="col" style="width: 16%;">STATUS</th>
+                <th scope="col" style="width: 10%;" class="text-end">ACTION</th>
+              </tr>
+            </thead>
+            <tbody id="auditLogTableBody">
+              <!-- Rendered dynamically by app.js -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: FILE VIOLATION (Enforcement Officer) ================= -->
+  <div class="modal fade" id="violationModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white py-2">
+          <h6 class="modal-title fw-bold"><i class="bi bi-file-earmark-ruled me-1"></i> Formally Issue Legal Metrology Violation Notice</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger py-2 small mb-3">
+            Notice will be recorded in the State Enforcement Register under Section 36 of Legal Metrology Act, 2009.
+          </div>
+          <div class="mb-2"><label class="form-label small fw-bold">Product:</label><input type="text" id="violationNoticeProduct" class="form-control form-control-sm" readonly></div>
+          <div class="mb-2"><label class="form-label small fw-bold">Manufacturer / Packer:</label><input type="text" id="violationNoticeMfg" class="form-control form-control-sm" readonly></div>
+          <div class="mb-2"><label class="form-label small fw-bold">Statutory Section:</label><input type="text" class="form-control form-control-sm" value="Section 36, Legal Metrology Act, 2009 (Rule 6 Declarations)" readonly></div>
+          <div class="mb-2"><label class="form-label small fw-bold">Officer Remarks:</label><textarea class="form-control form-control-sm" rows="3" placeholder="Enter batch number, inspected store location, discrepancies observed..."></textarea></div>
+        </div>
+        <div class="modal-footer py-2">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger btn-sm fw-bold" id="btnSubmitViolationNotice">Issue Formal Notice</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CONSUMER REPORT ================= -->
+  <div class="modal fade" id="consumerReportModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white py-2"><h6 class="modal-title fw-bold">Report Non-Compliant Food Packaging</h6><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body small">
+          <p class="text-muted mb-2">Complaint will be sent to <strong>National Consumer Helpline (1915)</strong> & <strong>FSSAI</strong>.</p>
+          <div class="mb-2"><label class="fw-bold">Product:</label><input type="text" id="consumerReportProduct" class="form-control form-control-sm" readonly></div>
+          <div class="mb-2"><label class="fw-bold">Complaint Type:</label><select class="form-select form-select-sm"><option>Misleading MRP / Missing Declarations</option><option>Overcharging Above MRP</option><option>Banned Chemical Additives</option></select></div>
+        </div>
+        <div class="modal-footer py-2"><button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button><button type="button" class="btn btn-primary btn-sm fw-bold" id="btnSubmitConsumerReport">Submit Grievance</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CAMERA SCANNER ================= -->
+  <div class="modal fade" id="cameraModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header py-2 border-secondary"><h6 class="modal-title fw-bold">Live Camera Scanner</h6><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" id="btnDismissCam"></button></div>
+        <div class="modal-body p-0 text-center"><video id="webcamVideo" autoplay playsinline class="w-100" style="max-height:340px;object-fit:cover;"></video></div>
+        <div class="modal-footer py-2 border-secondary justify-content-center"><button type="button" class="btn btn-primary px-4 fw-bold" id="btnCapturePhoto">Capture & Analyze</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

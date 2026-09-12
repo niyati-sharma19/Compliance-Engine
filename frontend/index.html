@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetroCheck — Redirecting... | SIH PS-26034</title>
+  <script>
+    // If the user already has an active session token, go to dashboard, otherwise login
+    if (localStorage.getItem('sih_auth_token')) {
+      window.location.replace("dashboard.html");
+    } else {
+      window.location.replace("login.html");
+    }
+  </script>
+</head>
+<body style="background:#0f172a; color:#f8fafc; font-family:sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0;">
+  <div style="text-align:center;">
+    <h2 style="margin-bottom:8px;">Redirecting to MetroCheck...</h2>
+    <p style="color:#94a3b8;">Legal Metrology Compliance Engine (SIH PS-26034)</p>
+    <p><a href="login.html" style="color:#38bdf8;">Click here if you are not redirected automatically</a></p>
+  </div>
+</body>
+</html>

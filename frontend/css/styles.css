@@ -1,0 +1,37 @@
+/* ==========================================================================
+   MetroCheck Dashboard Styles — Clean, Compact & Human-Readable
+   ========================================================================== */
+
+/* Status Badges inside Legal Audit Report */
+.audit-status-badge { font-size: 0.78rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
+.audit-status-badge.partially-compliant { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.audit-status-badge.compliant { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+.audit-status-badge.non-compliant { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+/* Rule Cards */
+.violation-card { border-left: 5px solid #dc3545 !important; background: #fff5f5; }
+.compliant-card { border-left: 5px solid #198754 !important; background: #f8fff9; }
+
+/* Banned Hazard Pulse */
+.banned-hazard-alert { border-left: 5px solid #dc3545; animation: alertPulse 2s infinite; }
+@keyframes alertPulse {
+  0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(220, 53, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+/* Upload Dropzone */
+#dropZone { transition: all 0.2s; }
+#dropZone:hover, #dropZone.drag-over { border-color: #0d6efd !important; background: #f0f7ff !important; }
+
+/* Audit History Badges & Progress */
+.audit-table-badge { font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+.badge-partially-compliant { background: #fef3c7; color: #92400e; }
+.badge-compliant { background: #d1fae5; color: #065f46; }
+.badge-non-compliant { background: #fee2e2; color: #991b1b; }
+.audit-table-progress { height: 6px; border-radius: 999px; background: #e2e8f0; min-width: 80px; }
+
+@media print {
+  nav, .card-header-pills, .btn, #dropZone, .modal, #auditHistoryView { display: none !important; }
+  body { background: #fff !important; }
+}

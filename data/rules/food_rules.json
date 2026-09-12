@@ -1,0 +1,42 @@
+{
+  "potassium bromate": {
+    "regulator": "FSSAI",
+    "clause": "Food Safety and Standards (Food Products Standards and Food Additives) Reg. 2016",
+    "hazard": "Complete ban as a flour treatment agent; carcinogenic risk"
+  },
+  "potassium iodate": {
+    "regulator": "FSSAI",
+    "clause": "FSSAI Gazette Notification 2016",
+    "hazard": "Prohibited for bakery flour processing"
+  },
+  "calcium carbide": {
+    "regulator": "FSSAI",
+    "clause": "Regulation 2.3.5, FSS (Prohibition and Restrictions on Sales) Regulations 2011",
+    "hazard": "Prohibited artificial fruit ripening agent; produces acetylene and traces of arsenic/phosphorus"
+  },
+  "rhodamine b": {
+    "regulator": "FSSAI",
+    "clause": "Section 16, FSS Act 2006",
+    "hazard": "Toxic industrial dye strictly banned in all foods (cotton candy, sweets)"
+  },
+  "metanil yellow": {
+    "regulator": "FSSAI",
+    "clause": "FSS (Food Product Standards and Food Additives) Regulations 2011",
+    "hazard": "Non-permitted synthetic coal-tar dye prohibited in dals, besan, and turmeric"
+  },
+  "sudan i": {
+    "regulator": "FSSAI / WHO",
+    "clause": "Adulteration Prevention Standards",
+    "hazard": "Prohibited carcinogenic industrial dye in chilli powders"
+  },
+  "argemone oil": {
+    "regulator": "FSSAI",
+    "clause": "FSS (Prohibition and Restrictions on Sales) 2011",
+    "hazard": "Toxic adulterant in mustard/edible oils causing epidemic dropsy"
+  },
+  "lead chromate": {
+    "regulator": "FSSAI",
+    "clause": "FSS Act 2006 Adulteration Mandate",
+    "hazard": "Neurotoxic heavy-metal colorant prohibited in turmeric"
+  }
+}

@@ -1,0 +1,6 @@
+@ProductScannerBackend_HostAddress = http://localhost:5242
+
+GET {{ProductScannerBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,27 @@
+{
+  "mercury": {
+    "regulator": "CDSCO / BIS IS 4707",
+    "clause": "IS 4707 Part 1 (Negative List of Ingredients)",
+    "hazard": "Heavy-metal toxicant prohibited in skin whitening/lightening products"
+  },
+  "bithionol": {
+    "regulator": "CDSCO",
+    "clause": "Drugs and Cosmetics Rules 1945, Schedule S",
+    "hazard": "Prohibited photocontact allergen in cosmetic formulations"
+  },
+  "hexachlorophene": {
+    "regulator": "CDSCO / BIS",
+    "clause": "Drugs and Cosmetics Rules",
+    "hazard": "Prohibited neurotoxic antibacterial additive"
+  },
+  "chloroform": {
+    "regulator": "BIS IS 4707",
+    "clause": "Prohibited Solvents Schedule",
+    "hazard": "Prohibited hazardous solvent in topical cosmetics"
+  },
+  "lead": {
+    "regulator": "BIS IS 4707 Part 1",
+    "clause": "Heavy Metal Cap Annexure",
+    "hazard": "Prohibited contaminant/additive beyond trace limits"
+  }
+}

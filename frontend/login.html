@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetroCheck — Log in or Sign up | SIH PS-26034</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <!-- Toast Notification Container (Live Alerts) -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Ambient Glowing Animated Background Orbs -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+
+  <!-- Main Glassmorphism Authentication Card -->
+  <div class="card glass-card">
+    
+    <!-- Theme Toggle & GitHub Link -->
+    <div style="position: absolute; top: 16px; right: 16px; display: flex; gap: 8px; z-index: 10;">
+      <a href="https://github.com/anuskayadav03/project" target="_blank" class="theme-toggle" style="position:static; text-decoration:none; display:flex; align-items:center; justify-content:center;" title="View Source on GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+      </a>
+      <button class="theme-toggle" id="themeToggle" style="position:static;" aria-label="Toggle Dark/Light Mode">
+        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Top Notice Banner -->
+    <div class="corner-toast" id="cornerToast">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      <span>New Legal Metrology 2011 ruling active. Verify label compliance.</span>
+      <button class="close-btn" id="dismissToast" aria-label="Dismiss notice">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ================= 1. LEFT BRAND PANEL ================= -->
+    <div class="brand-panel">
+      <div class="brand-top">
+        <div class="logo-row">
+          <span class="logo-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="logo-text">MetroCheck</span>
+        </div>
+
+        <!-- Visual Packaging Verification Graphic -->
+        <div class="illustration">
+          <div class="illustration-card">
+            <div class="illustration-line l1"></div>
+            <div class="illustration-line l2"></div>
+            <div class="illustration-line l3"></div>
+            <div class="illustration-line l4"></div>
+          </div>
+          <span class="illustration-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="brand-bottom">
+        <p class="eyebrow">Smart India Hackathon · PS 26034</p>
+        <h1 class="headline">Legal Metrology, made verifiable.</h1>
+        <p class="subcopy">Automated compliance checks for packaged commodities under the Legal Metrology Rules, 2011.</p>
+
+        <div class="stat-card">
+          <span class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m7.5 4.27 9 5.15"/>
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              <path d="m3.3 7 8.7 5 8.7-5"/>
+              <path d="M12 22V12"/>
+            </svg>
+          </span>
+          <p class="stat-text">
+            <strong>10,000+ labels scanned</strong>
+            <span>flagged for statutory compliance</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 2. RIGHT FORM PANEL ================= -->
+    <div class="form-panel">
+      <div class="form-inner">
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+          <button class="tab-btn active" id="tabLogin" type="button">Log in</button>
+          <button class="tab-btn" id="tabSignup" type="button">Sign up</button>
+        </div>
+
+        <!-- ---------------- A) LOG IN VIEW ---------------- -->
+        <div id="loginView" class="view-panel">
+          <h2 class="form-heading">Welcome back</h2>
+          <p class="form-subheading">Sign in to your compliance dashboard</p>
+
+          <!-- Google Quick Auth Button -->
+          <button type="button" class="google-auth-btn" id="googleLoginBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+
+          <div class="auth-divider">
+            <span>or sign in with email</span>
+          </div>
+
+          <!-- Log In Form -->
+          <form id="loginForm" novalidate>
+            
+            <!-- 4-Role Selector (Dropdown with Dark Mode Text Fix) -->
+            <div class="field">
+              <div class="input-shell select-shell" id="loginRoleShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+                <div class="floating-wrap">
+                  <select id="loginRole">
+                    <option value="Manufacturer">Manufacturer</option>
+                    <option value="Retailer">Retailer</option>
+                    <option value="Enforcement officer" selected>Enforcement officer</option>
+                    <option value="Consumer">Consumer</option>
+                  </select>
+                  <label class="floating-label elevated" for="loginRole">Log in as</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="field">
+              <div class="input-shell" id="loginEmailShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>
+                </svg>
+                <div class="floating-wrap">
+                  <input type="email" id="loginEmail" placeholder=" " autocomplete="email" value="officer@gmail.com" required />
+                  <label class="floating-label" for="loginEmail">Work email</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="field">
+              <div class="input-shell" id="loginPasswordShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <div class="floating-wrap">
+                  <input type="password" id="loginPassword" placeholder=" " autocomplete="current-password" value="Password123" required />
+                  <label class="floating-label" for="loginPassword">Password</label>
+                </div>
+                <button type="button" class="toggle-pw" data-target="loginPassword" aria-label="Toggle password visibility">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Options Row: Remember Email & Forgot Password -->
+            <div class="options-row">
+              <label class="remember-wrap" for="rememberMe">
+                <input type="checkbox" id="rememberMe" checked />
+                <span class="custom-check">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span>Remember email</span>
+              </label>
+              <button type="button" class="link-btn" id="forgotPasswordBtn">Forgot password?</button>
+            </div>
+
+            <!-- Login Submit Button -->
+            <button type="submit" class="submit-btn" id="loginSubmitBtn">
+              <span class="btn-text">Log in</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+
+            <!-- Reset Form Fields -->
+            <div class="form-reset-row">
+              <button type="button" class="reset-link" id="resetLoginForm">Clear fields</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ---------------- B) SIGN UP VIEW ---------------- -->
+        <div id="signupView" class="view-panel hidden">
+          <h2 class="form-heading">Create your account</h2>
+          <p class="form-subheading">For manufacturers, retailers, and enforcement officers</p>
+
+          <!-- Google Quick Auth Button -->
+          <button type="button" class="google-auth-btn" id="googleSignupBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+            </svg>
+            <span>Sign up with Google</span>
+          </button>
+
+          <div class="auth-divider">
+            <span>or sign up with email</span>
+          </div>
+
+          <!-- Sign Up Form -->
+          <form id="signupForm" novalidate>
+            
+            <!-- Full Name -->
+            <div class="field">
+              <div class="input-shell" id="signupNameShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+                <div class="floating-wrap">
+                  <input type="text" id="signupName" placeholder=" " autocomplete="name" required />
+                  <label class="floating-label" for="signupName">Full name</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="field">
+              <div class="input-shell" id="signupEmailShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>
+                </svg>
+                <div class="floating-wrap">
+                  <input type="email" id="signupEmail" placeholder=" " autocomplete="email" required />
+                  <label class="floating-label" for="signupEmail">Work email</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role Selector (Dropdown with Dark Mode Text Fix) -->
+            <div class="field">
+              <div class="input-shell select-shell" id="signupRoleShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+                <div class="floating-wrap">
+                  <select id="signupRole">
+                    <option value="Manufacturer">Manufacturer</option>
+                    <option value="Retailer">Retailer</option>
+                    <option value="Enforcement officer" selected>Enforcement officer</option>
+                    <option value="Consumer">Consumer</option>
+                  </select>
+                  <label class="floating-label elevated" for="signupRole">Account role</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="field">
+              <div class="input-shell" id="signupPasswordShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <div class="floating-wrap">
+                  <input type="password" id="signupPassword" placeholder=" " autocomplete="new-password" required />
+                  <label class="floating-label" for="signupPassword">Password</label>
+                </div>
+                <button type="button" class="toggle-pw" data-target="signupPassword" aria-label="Toggle password visibility">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Live Password Strength Meter -->
+              <div class="pw-strength-container hidden" id="pwStrengthContainer">
+                <div class="strength-bar-track">
+                  <div class="strength-bar-fill" id="strengthBar"></div>
+                </div>
+                <div class="strength-header">
+                  <span>Password strength:</span>
+                  <strong id="strengthText">Weak</strong>
+                </div>
+                <ul class="pw-criteria-list">
+                  <li id="critLength">At least 8 characters</li>
+                  <li id="critUpper">One uppercase letter</li>
+                  <li id="critNumber">One number</li>
+                  <li id="critSpecial">One special character</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="field">
+              <div class="input-shell" id="confirmPasswordShell">
+                <svg class="field-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <div class="floating-wrap">
+                  <input type="password" id="signupConfirmPassword" placeholder=" " autocomplete="new-password" required />
+                  <label class="floating-label" for="signupConfirmPassword">Confirm password</label>
+                </div>
+                <button type="button" class="toggle-pw" data-target="signupConfirmPassword" aria-label="Toggle password visibility">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Signup Submit Button -->
+            <button type="submit" class="submit-btn" id="signupSubmitBtn">
+              <span class="btn-text">Create account</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+
+            <!-- Reset Form Fields -->
+            <div class="form-reset-row">
+              <button type="button" class="reset-link" id="resetSignupForm">Clear fields</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Compliance Badge Footer -->
+        <div class="compliance-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+          </svg>
+          <span>Compliant with Legal Metrology Rules, 2011</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= 3. GOOGLE ACCOUNT SELECTOR MODAL ================= -->
+  <div class="google-modal-backdrop hidden" id="googleModal">
+    <div class="google-modal-card">
+      <div class="google-modal-header">
+        <svg width="22" height="22" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+        </svg>
+        <div>
+          <h3 id="googleModalTitle">Sign in with Google</h3>
+          <p>Choose an account to continue to <strong>MetroCheck</strong></p>
+        </div>
+        <button type="button" class="google-modal-close" id="closeGoogleModal" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="google-account-list">
+        <!-- Saved Account 1 -->
+        <button type="button" class="google-account-item" data-email="anuska.yadav@gmail.com" data-name="Anuska Yadav">
+          <div class="google-avatar">AY</div>
+          <div class="google-account-info">
+            <span class="google-name">Anuska Yadav</span>
+            <span class="google-email">anuska.yadav@gmail.com</span>
+          </div>
+          <span class="google-badge">Active</span>
+        </button>
+
+        <!-- Saved Account 2 -->
+        <button type="button" class="google-account-item" data-email="officer.compliance@gov.in" data-name="Legal Metrology Officer">
+          <div class="google-avatar" style="background:#059669;">LM</div>
+          <div class="google-account-info">
+            <span class="google-name">Legal Metrology Officer</span>
+            <span class="google-email">officer.compliance@gov.in</span>
+          </div>
+        </button>
+
+        <div class="google-custom-divider">
+          <span>or use another email</span>
+        </div>
+
+        <div class="google-custom-box">
+          <div class="input-shell">
+            <input type="email" id="googleCustomEmail" placeholder="Enter Google email address..." />
+          </div>
+          <button type="button" class="submit-btn" id="googleCustomSubmit">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 4. "WELCOME BACK!" CELEBRATION MODAL ================= -->
+  <div class="welcome-modal-backdrop hidden" id="welcomeModal">
+    <div class="welcome-modal-card">
+      <div class="welcome-celebrate-badge">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+
+      <h2 id="welcomeHeading">Welcome back!</h2>
+      <p class="welcome-subtext">You have successfully authenticated into MetroCheck.</p>
+      
+      <!-- User Info Card -->
+      <div class="welcome-user-card">
+        <div class="welcome-avatar" id="welcomeAvatar">AY</div>
+        <div class="welcome-details">
+          <strong id="welcomeUserName">Anuska Yadav</strong>
+          <span id="welcomeUserEmail">anuska.yadav@gmail.com</span>
+          <span class="welcome-role-badge" id="welcomeUserRole">Enforcement officer</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="welcome-actions">
+        <button type="button" class="submit-btn" id="welcomeContinueBtn">
+          <span>Continue to Dashboard</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+        <button type="button" class="secondary-btn" id="welcomeLogoutBtn">
+          Sign out / Switch account
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Controller -->
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "endosulfan": {
+    "regulator": "CIBRC / Supreme Court of India",
+    "clause": "Insecticides Act 1968 Statutory Ban",
+    "hazard": "Complete ban; persistent organic pollutant and acute neurotoxin"
+  },
+  "monocrotophos": {
+    "regulator": "CIBRC",
+    "clause": "Order on Hazardous Insecticides",
+    "hazard": "Prohibited for use on all vegetable crops (WHO Class Ib acute toxin)"
+  },
+  "aluminium phosphide": {
+    "regulator": "CIBRC",
+    "clause": "Restricted Pesticide Schedule",
+    "hazard": "Restricted solely to licensed government fumigators"
+  },
+  "diazinon": {
+    "regulator": "CIBRC",
+    "clause": "Phased-Out Organophosphates Notification",
+    "hazard": "Banned agricultural insecticide due to severe ecological toxicity"
+  }
+}

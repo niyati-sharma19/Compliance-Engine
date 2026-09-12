@@ -1,0 +1,22 @@
+{
+  "potassium bromate": {
+    "agency": "FSSAI",
+    "clause": "FSSAI Notification 2016 - Complete ban in bakery products",
+    "reason": "Carcinogenic food additive risk"
+  },
+  "potassium iodate": {
+    "agency": "FSSAI",
+    "clause": "FSSAI Gazette 2016",
+    "reason": "Banned as a flour treatment agent"
+  },
+  "titanium dioxide": {
+    "agency": "WHO/EFSA",
+    "clause": "E171 Genotoxicity Risk",
+    "reason": "Unsafe for use as food whitening color"
+  },
+  "rhodamine b": {
+    "agency": "FSSAI",
+    "clause": "Section 16, FSS Act 2006",
+    "reason": "Industrial dye strictly prohibited in all food items"
+  }
+}
