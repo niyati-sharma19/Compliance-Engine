@@ -21,9 +21,20 @@ class AIStudioVisionExtractor:
 
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         key = api_key or os.getenv("GEMINI_API_KEY", "")
+        if not key and os.path.exists(".env"):
+            try:
+                with open(".env", "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line.startswith("GEMINI_API_KEY="):
+                            key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                            break
+            except Exception:
+                pass
+
         if not key:
             raise ValueError(
-                "GEMINI_API_KEY is not set. Set it via $env:GEMINI_API_KEY='...' in PowerShell."
+                "GEMINI_API_KEY is not set. Set it in .env or via $env:GEMINI_API_KEY='...' in PowerShell."
             )
         self.client = genai.Client(api_key=key)
         self.preferred_model = model or "gemini-3.5-flash-lite"
