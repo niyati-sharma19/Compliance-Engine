@@ -222,11 +222,20 @@ if __name__ == "__main__":
     import webbrowser
     import threading
     import time
+    import socket
+
+    port = 8000
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind(("0.0.0.0", port))
+        s.close()
+    except OSError:
+        port = 8001
 
     def open_browser():
         time.sleep(1.2)
-        webbrowser.open("http://localhost:8000")
+        webbrowser.open(f"http://localhost:{port}")
 
     threading.Thread(target=open_browser, daemon=True).start()
-    print("🚀 Server starting! Automatically opening browser at http://localhost:8000 ...")
-    uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
+    print(f"[*] Server starting! Automatically opening browser at http://localhost:{port} ...")
+    uvicorn.run("api:app", host="0.0.0.0", port=port, reload=False)
