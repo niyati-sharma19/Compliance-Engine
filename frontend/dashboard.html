@@ -202,34 +202,6 @@
           <div class="card-body"><div id="bannedIngredientsSection"><small class="text-muted">Scan a food packaging label to verify ingredients against banned chemicals.</small></div></div>
         </div>
 
-        <!-- 🤖 FOR ML MODEL TEAMMATE (INGREDIENTS & CHEMICAL HAZARDS AI) -->
-        <div class="card border-warning border-opacity-50 shadow-sm mb-3">
-          <div class="card-header bg-warning bg-opacity-10 py-2 d-flex justify-content-between align-items-center">
-            <strong class="text-dark small"><i class="bi bi-robot text-warning me-1"></i> Ingredients AI / ML Model Bridge</strong>
-            <span class="badge bg-warning text-dark">For ML Teammate</span>
-          </div>
-          <div class="card-body small text-muted">
-            <p class="mb-1"><strong>ML Teammate:</strong> Connect your Python NLP / Classification model in <code>js/app.js</code> inside <code>backendCheckBannedIngredientsAPI()</code>.</p>
-            <div class="bg-dark text-light p-2 rounded font-monospace" style="font-size:0.75rem;">
-              // Input: { ingredients: "..." }<br>
-              // POST /api/ml/check-ingredients -&gt; Output: { detectedBanned: [...], detectedRestricted: [...] }
-            </div>
-          </div>
-        </div>
-
-        <!-- ⚙️ FOR THE 2 BACKEND TEAMMATES -->
-        <div class="card border-secondary border-opacity-50 shadow-sm mb-3">
-          <div class="card-header bg-secondary bg-opacity-10 py-2 d-flex justify-content-between">
-            <strong class="text-dark small">⚙️ Backend API Bridge</strong>
-            <span class="badge bg-secondary">For 2 Backend Teammates</span>
-          </div>
-          <div class="card-body small text-muted">
-            Connect your FastAPI / Flask / Node.js backend in <code>js/app.js</code>:
-            <code class="d-block bg-dark text-light p-2 rounded mt-1">
-              POST /api/check-compliance-2011 &nbsp;&bull;&nbsp; POST /api/check-banned-ingredients
-            </code>
-          </div>
-        </div>
 
       </div>
     </div>
